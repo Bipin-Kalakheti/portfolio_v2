@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
+import ProjectsGrid from "@/components/projects/ProjectGrid";
 import TechStack from "@/components/Techstack";
 
 export default function HomePage() {
@@ -44,6 +45,7 @@ export default function HomePage() {
           </div>
 
           <TechStack />
+          <ProjectsGrid showFeaturedOnly />
         </div>
       </div>
     </main>
