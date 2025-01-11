@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 left-0 right-0 z-50 bg-black">
       <div className=" max-w-4xl mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center font-incognito">
           <Link href="/" className="text-xl font-bold cursor-pointer">
             Bipin Kalakheti
           </Link>

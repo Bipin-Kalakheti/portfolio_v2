@@ -1,7 +1,9 @@
 import { Mail, Github, Linkedin } from "lucide-react";
+import { incognito } from "../../public/assets/font/font";
+
 const ProfileSection = () => {
   return (
-    <div className="flex items-start gap-6 mt-6">
+    <div className={`flex items-start gap-6 mt-6 ${incognito.variable}`}>
       <div className="w-20 h-20 relative">
         <div className="w-full h-full rounded-full overflow-hidden">
           <img

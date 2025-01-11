@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        incognito: ["var(--incognito)"],
+        inter: ["var(--inter)"],
+      },
       colors: {
         zinc: {
           850: "#1f1f1f",

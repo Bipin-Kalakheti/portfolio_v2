@@ -1,31 +1,85 @@
-"use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
 
-const technologies = [
-  { name: "Motion", icon: "▲" },
-  { name: "HTML 5", icon: "❖" },
-  { name: "CSS", icon: "❖" },
+const technologies1 = [
+  { name: "JavaScript", icon: "JS" },
   { name: "TypeScript", icon: "TS" },
-  { name: "Next.js", icon: "N" },
-  { name: "Tailwind CSS", icon: "~" },
-  { name: "Supabase", icon: "⚡" },
-  { name: "React.js", icon: "⚛" },
+  { name: "Hugo", icon: "H" },
+  { name: "React", icon: "⚛" },
+  { name: "Nextjs", icon: "N" },
+  { name: "Vite", icon: "⚡" },
+  { name: "HTML", icon: "❖" },
 ];
+
+const technologies2 = [
+  { name: "Rust", icon: "🦀" },
+  { name: "Git", icon: "⎇" },
+  { name: "Java", icon: "☕" },
+  { name: "Spring", icon: "🍃" },
+  { name: "Express", icon: "EX" },
+  { name: "PostgreSQL", icon: "🐘" },
+  { name: "MariaDB", icon: "📊" },
+];
+
+const InfiniteScroll = ({ items, direction = 1 }) => {
+  const [width, setWidth] = React.useState(0);
+  const scrollRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (scrollRef.current) {
+      // Get the width of a single set of items
+      setWidth(scrollRef.current.offsetWidth / 2);
+    }
+  }, [items]);
+
+  return (
+    <div className="flex relative overflow-hidden w-full py-4">
+      <motion.div
+        ref={scrollRef}
+        className="flex gap-8 whitespace-nowrap"
+        animate={{
+          x: [-width, 0],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+      >
+        {/* First set of items */}
+        {items.map((tech, index) => (
+          <div
+            key={`first-${index}`}
+            className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+          >
+            <span className="text-xl font-bold">{tech.icon}</span>
+            <span className="text-sm">{tech.name}</span>
+          </div>
+        ))}
+        {/* Duplicate set for seamless loop */}
+        {items.map((tech, index) => (
+          <div
+            key={`second-${index}`}
+            className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+          >
+            <span className="text-xl font-bold">{tech.icon}</span>
+            <span className="text-sm">{tech.name}</span>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
 const TechStack = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-      {technologies.map((tech) => (
-        <motion.div
-          key={tech.name}
-          whileHover={{ scale: 1.05 }}
-          className="bg-zinc-900/50 rounded-lg p-4 flex flex-col items-center justify-center gap-2"
-        >
-          <span className="text-2xl">{tech.icon}</span>
-          <span className="text-sm text-zinc-400">{tech.name}</span>
-        </motion.div>
-      ))}
+    <div className="w-full max-w-4xl mx-auto bg-black p-8 space-y-6">
+      <h1 className="text-3xl font-bold text-white mb-8">What I work with</h1>
+      <div className="space-y-8">
+        <InfiniteScroll items={technologies1} direction={-1} />
+        <InfiniteScroll items={technologies2} direction={-1} />
+      </div>
     </div>
   );
 };

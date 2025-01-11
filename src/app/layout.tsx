@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { incognito, gitlabmono } from "../../public/assets/font/font";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${incognito.variable} ${inter.className} ${gitlabmono.variable}`}
+      >
         <Navbar />
         <main className="min-h-90vh bg-black text-white p-6">
           <div className="max-w-4xl mx-auto">{children}</div>
