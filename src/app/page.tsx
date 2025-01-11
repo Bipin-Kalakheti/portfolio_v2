@@ -1,15 +1,15 @@
 "use client";
-
-import Navbar from "@/components/Navbar";
+import React from "react";
+import ProfileSection from "@/components/Profile";
+import { motion } from "framer-motion";
+import TechStack from "@/components/TechStack";
 import ProjectsGrid from "@/components/projects/ProjectGrid";
-import TechStack from "@/components/Techstack";
 import MapComponent from "@/components/Map";
 import "@/styles/Map.css";
-import { motion } from "framer-motion";
 
 export default function HomePage() {
   return (
-    <div className="mt-20">
+    <div className="mt-20 max-w-4xl mx-auto">
       <div className="relative">
         {/* Map Section */}
         <div className="relative w-full h-64 rounded-lg overflow-hidden">
@@ -19,30 +19,7 @@ export default function HomePage() {
         </div>
 
         {/* Profile Section */}
-        <div className="flex items-start gap-6 mt-6">
-          <div className="w-20 h-20 relative">
-            <div className="w-full h-full rounded-full overflow-hidden">
-              <img
-                src="/images/profile.jpg"
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="flex-1">
-            <h1 className="text-2xl font-semibold mb-2">
-              Hey, I'm Bipin Kalakheti 👋
-            </h1>
-            <div className="flex items-center text-green-500 gap-2 mb-4">
-              <span className="w-2 h-2 rounded-full bg-green-500"></span>
-              <span>Available for work</span>
-            </div>
-            <p className="text-zinc-300 text-lg">
-              I'm a creative software developer with experience in UI design and
-              crafting engaging user experiences with great attention to detail.
-            </p>
-          </div>
-        </div>
+        <ProfileSection />
       </div>
       <TechStack />
       <ProjectsGrid showFeaturedOnly />
