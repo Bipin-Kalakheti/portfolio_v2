@@ -3,6 +3,9 @@
 import Navbar from "@/components/Navbar";
 import ProjectsGrid from "@/components/projects/ProjectGrid";
 import TechStack from "@/components/Techstack";
+import MapComponent from "@/components/Map";
+import "@/styles/Map.css";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
   return (
@@ -12,20 +15,22 @@ export default function HomePage() {
         <div className="mt-20">
           <div className="relative">
             {/* Map Section */}
-            <div className="w-full h-64 rounded-lg overflow-hidden mb-8 bg-zinc-900">
-              <div className="w-full h-full bg-opacity-50 flex items-center justify-center">
-                <span className="text-zinc-500">Map View</span>
-              </div>
-              <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md rounded-md px-3 py-1">
-                04:44 PM CST
-              </div>
+            <div className="relative w-full h-64 rounded-lg overflow-hidden">
+              <MapComponent />
+              {/* Gradient overlay */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-[linear-gradient(transparent,#9d9da200_60%,#fafafa)] dark:bg-[linear-gradient(transparent,#18181b73_60%,#0a0a0a)]"></div>
             </div>
 
             {/* Profile Section */}
-            <div className="flex items-start gap-6">
-              <div className="w-20 h-20 rounded-full overflow-hidden bg-zinc-800">
-                {/* Add your profile image here */}
-                <div className="w-full h-full bg-zinc-800" />
+            <div className="flex items-start gap-6 mt-6">
+              <div className="w-20 h-20 relative">
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <img
+                    src="/images/profile.jpg"
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
               <div className="flex-1">
                 <h1 className="text-2xl font-semibold mb-2">
@@ -43,7 +48,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
           <TechStack />
           <ProjectsGrid showFeaturedOnly />
         </div>

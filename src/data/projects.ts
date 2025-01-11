@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: "Portfolio Website",
     description:
       "Personal portfolio website built with Next.js and TailwindCSS.",
-    imageUrl: "/images/portfolio.jpg",
+    imageUrl: "/images/portfolio.png",
     technologies: [
       { name: "React", icon: "⚛" },
       { name: "Next.js", icon: "N" },
@@ -20,7 +20,7 @@ export const projects: Project[] = [
     title: "GuffGaff",
     description:
       "A React-based real-time chat app leveraging Firebase for backend services.",
-    imageUrl: "/images/guff-gaff.jpg",
+    imageUrl: "/images/GuffGaff.png",
     technologies: [
       { name: "React", icon: "⚛" },
       { name: "Firebase", icon: "🔥" },
