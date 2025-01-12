@@ -20,7 +20,7 @@ export const projects: Project[] = [
     title: "GuffGaff",
     description:
       "A React-based real-time chat app leveraging Firebase for backend services.",
-    imageUrl: "/images/GuffGaff.png",
+    imageUrl: "/assets/images/GuffGaff.png",
     technologies: [
       { name: "React", icon: "⚛" },
       { name: "Firebase", icon: "🔥" },
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     title: "KhajaGhar",
     description:
       "A full-stack food ordering web application built with the MERN stack.",
-    imageUrl: "/images/khaja-ghar.jpg",
+    imageUrl: "/assets/images/KhajaGhar.png",
     technologies: [
       { name: "React", icon: "⚛" },
       { name: "Node.js", icon: "⬢" },
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     title: "PathViz",
     description:
       "A NextJs app, designed to manage and organize job applications, statuses, and related notes.",
-    imageUrl: "/images/path-viz.jpg",
+    imageUrl: "/assets/images/pathviz.png",
     technologies: [
       { name: "React", icon: "⚛" },
       { name: "TypeScript", icon: "TS" },
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     title: "VisualSort",
     description:
       "A NextJs app, designed to manage and organize job applications, statuses, and related notes.",
-    imageUrl: "/images/visual-sort.jpg",
+    imageUrl: "/assets/images/visualSort.png",
     technologies: [
       { name: "Next.js", icon: "N" },
       { name: "TypeScript", icon: "TS" },
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     title: "RojGar",
     description:
       "A NextJs app, designed to manage and organize job applications, statuses, and related notes.",
-    imageUrl: "/images/roj-gar.jpg",
+    imageUrl: "/assets/images/RojGar.png",
     technologies: [
       { name: "Node.js", icon: "⬢" },
       { name: "Next.js", icon: "N" },
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     title: "Mini Practice project",
     description:
       "A NextJs app, designed to manage and organize job applications, statuses, and related notes.",
-    imageUrl: "/images/mini-project.jpg",
+    imageUrl: "/assets/images/mini-project.gif",
     technologies: [
       { name: "Next.js", icon: "N" },
       { name: "JavaScript", icon: "JS" },

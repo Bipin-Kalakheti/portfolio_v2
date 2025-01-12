@@ -8,7 +8,7 @@ export const incognito = localFont({
       style: "normal",
     },
     {
-      path: "incognito_condensed.woff2",
+      path: "incognito_medium.woff2",
       weight: "700",
       style: "normal",
     },

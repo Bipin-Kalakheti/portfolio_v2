@@ -1,4 +1,3 @@
-// src/components/projects/ProjectGrid.tsx
 "use client";
 import React from "react";
 import ProjectCard from "./ProjectCard";
@@ -10,9 +9,9 @@ const ProjectsGrid = ({ showFeaturedOnly = false }) => {
     : projects;
 
   return (
-    <section className="py-16">
+    <section className="py-16 ">
       <h2 className="text-4xl font-bold mb-12">My personal projects</h2>
-      <div className="grid gap-8">
+      <div className="grid gap-8 md:grid-cols-2">
         {displayedProjects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}

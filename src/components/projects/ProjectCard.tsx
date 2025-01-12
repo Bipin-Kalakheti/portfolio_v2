@@ -13,24 +13,27 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 1, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.2 }}
       className="relative overflow-hidden rounded-2xl bg-zinc-900/50 hover:bg-zinc-900/75 transition-colors group"
     >
-      <div className="p-8">
-        <div className="flex items-start gap-6">
-          <div className="w-12 h-12 relative">
-            <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-0.5 overflow-hidden rounded">
-              <div className="bg-pink-500"></div>
-              <div className="bg-purple-500"></div>
-              <div className="bg-yellow-500"></div>
-              <div className="bg-blue-500"></div>
-            </div>
-          </div>
-          <div className="flex-1">
+      <div className="relative h-[400px] w-full overflow-hidden">
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-black/70 transition-all duration-300 ease-out opacity-70 group-hover:scale-105"></div>
+        {project.imageUrl && (
+          <Image
+            src={project.imageUrl}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
+        )}
+        <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end bg-black/50 transition-opacity">
+          <motion.div className="relative flex flex-col gap-4 transition-transform duration-300 group-hover:-translate-y-4">
             <div className="flex justify-between items-start">
-              <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+              <h3 className="text-2xl font-semibold mb-2 text-white">
+                {project.title}
+              </h3>
               <div className="flex gap-2">
                 {project.github && (
                   <a
@@ -55,7 +58,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               </div>
             </div>
             <p className="text-zinc-400 mb-4">{project.description}</p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech) => (
                 <div
                   key={tech.name}
@@ -66,21 +69,10 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-      {/* Project Preview Image */}
-      <div className="mt-4">
-        <div className="relative h-[400px] w-full overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 z-10"></div>
-          {project.imageUrl && (
-            <Image
-              src={project.imageUrl}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-            />
-          )}
+          </motion.div>
+          <button className="opacity-0 absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-blue-500 text-white rounded-full opacity-0 translate-y-20 group-hover:translate-y-0 group-hover:opacity-0 transition-all duration-300">
+            Learn More
+          </button>
         </div>
       </div>
     </motion.div>
