@@ -43,19 +43,4 @@
   pointer-events: auto;
 }
 
-svg {
-  width: 40px;
-  height: 40px;
-  fill: #ffff;
-  
-}
 
-svg {
-  /* Makes the SVG black and white */
-  transition: filter 0.3s ease;
-}
-
-svg:hover {
-  /* Removes the filter on hover, showing original colors */
-  filter: none;
-}

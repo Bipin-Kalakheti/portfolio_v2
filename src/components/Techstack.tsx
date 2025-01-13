@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import JavaScriptIcon from "../../public/assets/Icons/JavaScript";
 import TypeScriptIcon from "../../public/assets/Icons/TypeScript";
 import ReactIcon from "../../public/assets/Icons/React";
@@ -16,89 +15,84 @@ import NodejsIcon from "../../public/assets/Icons/Node";
 import FirebaseIcon from "../../public/assets/Icons/Firebase";
 import FigmaIcon from "../../public/assets/Icons/Figma";
 import TailwindIcon from "../../public/assets/Icons/Tailwind";
-
-const technologies1 = [
-  { name: "JavaScript", icon: <JavaScriptIcon /> },
-  { name: "TypeScript", icon: <TypeScriptIcon /> },
-  { name: "React", icon: <ReactIcon /> },
-  { name: "Next.js", icon: <NextjsIcon /> },
-  { name: "Vite", icon: <ViteIcon /> },
-  { name: "HTML", icon: <HtmlIcon /> },
-  { name: "Figma", icon: <FigmaIcon /> },
-  { name: "Tailwind CSS", icon: <TailwindIcon /> },
-];
-
-const technologies2 = [
-  { name: "Rust", icon: <RustIcon /> },
-  { name: "Git", icon: <GitIcon /> },
-  { name: "Java", icon: <JavaIcon /> },
-  { name: "Express", icon: <ExpressIcon /> },
-  { name: "Python", icon: <PythonIcon /> },
-  { name: "MongoDB", icon: <MongoDBIcon /> },
-  { name: "Node.js", icon: <NodejsIcon /> },
-  { name: "Firebase", icon: <FirebaseIcon /> },
-];
+import "./Techstack.css"; // Import the CSS file
 
 const InfiniteScroll = ({ items, direction = 1 }) => {
-  const [width, setWidth] = React.useState(0);
-  const scrollRef = React.useRef(null);
+  const [contentLoaded, setContentLoaded] = useState(false);
 
-  React.useEffect(() => {
-    if (scrollRef.current) {
-      setWidth(scrollRef.current.offsetWidth / 2);
+  useEffect(() => {
+    const scrollers = document.querySelectorAll(".scroller");
+    if (
+      scrollers.length > 0 &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      addAnimation();
+      setContentLoaded(true);
     }
-  }, [items]);
+  }, [contentLoaded]);
+
+  function addAnimation() {
+    const scrollers = document.querySelectorAll(".scroller");
+    scrollers.forEach((scroller) => {
+      scroller.setAttribute("data-animated", "true");
+
+      const scrollerInner = scroller.querySelector(".scroller_inner");
+      const scrollerContent = Array.from(scrollerInner.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", "true");
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    });
+  }
 
   return (
-    <div className="flex relative overflow-hidden w-full py-4">
-      <motion.div
-        ref={scrollRef}
-        className="flex gap-2 whitespace-nowrap"
-        animate={{
-          x: direction > 0 ? [-width, 0] : [0, -width],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-          repeatType: "loop",
-        }}
-      >
-        {[...Array(2)].map((_, setIndex) => (
-          <React.Fragment key={`set-${setIndex}`}>
-            {items.map((tech, index) => (
-              <div
-                key={`${setIndex}-${index}`}
-                className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group"
-              >
-                <div className="w-10 h-10 bg-black rounded-full grayscale transition-transform duration-4000 ease-out group-hover:-translate-y-2 group-hover:grayscale-0">
-                  {React.cloneElement(tech.icon, {
-                    className:
-                      "w-full h-full text-current group-hover:text-white",
-                  })}
-                </div>
-                <span className="text-lg font-semibold group-hover:text-white transition-colors">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-          </React.Fragment>
+    <div
+      className={`scroller ${
+        direction > 0 ? "right-scrollAnimate" : "left-scrollAnimate"
+      }`}
+      data-direction={direction > 0 ? "right" : "left"}
+    >
+      <div className="scroller_inner">
+        {items.map((tech, index) => (
+          <div key={index} className="tech-item">
+            {tech.icon}
+            <span>{tech.name}</span>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
 
 const TechStack = () => {
+  const technologies1 = [
+    { name: "JavaScript", icon: <JavaScriptIcon /> },
+    { name: "TypeScript", icon: <TypeScriptIcon /> },
+    { name: "React", icon: <ReactIcon /> },
+    { name: "Next.js", icon: <NextjsIcon /> },
+    { name: "Vite", icon: <ViteIcon /> },
+    { name: "HTML", icon: <HtmlIcon /> },
+    { name: "Figma", icon: <FigmaIcon /> },
+    { name: "Tailwind CSS", icon: <TailwindIcon /> },
+  ];
+
+  const technologies2 = [
+    { name: "Rust", icon: <RustIcon /> },
+    { name: "Git", icon: <GitIcon /> },
+    { name: "Java", icon: <JavaIcon /> },
+    { name: "Express", icon: <ExpressIcon /> },
+    { name: "Python", icon: <PythonIcon /> },
+    { name: "MongoDB", icon: <MongoDBIcon /> },
+    { name: "Node.js", icon: <NodejsIcon /> },
+    { name: "Firebase", icon: <FirebaseIcon /> },
+  ];
+
   return (
-    <div className="w-full max-w-4xl mx-auto bg-black p-8 space-y-8 rounded-lg">
-      <h1 className="text-3xl font-bold text-white font-incognito">
-        What I work with
-      </h1>
-      <div className="space-y-2">
-        <InfiniteScroll items={technologies1} direction={1} />
-        <InfiniteScroll items={technologies2} direction={-1} />
-      </div>
+    <div className="techstack-container">
+      <InfiniteScroll items={technologies1} />
+      <InfiniteScroll items={technologies2} direction={-1} />
     </div>
   );
 };

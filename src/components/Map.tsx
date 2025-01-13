@@ -32,12 +32,12 @@ const MapComponent = () => {
 
     map.current = new maplibregl.Map({
       container: mapContainer.current,
-      style: `https://api.maptiler.com/maps/basic/style.json?key=${MAPTILER_API_KEY}`,
+      style: `https://api.maptiler.com/maps/basic-v2-dark/style.json?key=${MAPTILER_API_KEY}`,
       center: [-79.3832, 43.6532], // Toronto coordinates
       zoom: 11,
       bearing: 0,
       pitch: 0,
-      attributionControl:false,
+      attributionControl: false,
     });
 
     map.current.on("load", () => {
@@ -64,9 +64,12 @@ const MapComponent = () => {
     };
   }, []);
   return (
-    <div className="relative w-full h-64 rounded-lg overflow-hidden bg-white">
+    <div className="relative w-full h-64 rounded-lg overflow-hidden ">
       {/* Map container */}
-      <div ref={mapContainer} className="absolute inset-0 w-full h-full map-fadeout" />
+      <div
+        ref={mapContainer}
+        className="absolute inset-0 w-full h-full map-fadeout"
+      />
 
       {/* Clouds */}
       <MovingClouds />

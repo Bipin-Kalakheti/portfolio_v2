@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="relative w-full h-64 rounded-lg overflow-hidden">
           <MapComponent />
           {/* Gradient overlay */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-[linear-gradient(transparent,#9d9da200_60%,#fafafa)] dark:bg-[linear-gradient(transparent,#18181b73_60%,#0a0a0a)]"></div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent dark:from-black dark:to-transparent"></div>
         </div>
 
         {/* Profile Section */}

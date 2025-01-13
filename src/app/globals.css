@@ -24,3 +24,7 @@ h4 {
   font-family: var(--incognito), "Inter", sans-serif;
 }
 
+.tech-icon svg {
+  width: 40px;
+  height: 40px;
+}
