@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import JavaScriptIcon from "../../public/assets/Icons/JavaScript";
 import TypeScriptIcon from "../../public/assets/Icons/TypeScript";
 import ReactIcon from "../../public/assets/Icons/React";
@@ -15,56 +15,6 @@ import NodejsIcon from "../../public/assets/Icons/Node";
 import FirebaseIcon from "../../public/assets/Icons/Firebase";
 import FigmaIcon from "../../public/assets/Icons/Figma";
 import TailwindIcon from "../../public/assets/Icons/Tailwind";
-import "./Techstack.css"; // Import the CSS file
-
-const InfiniteScroll = ({ items, direction = 1 }) => {
-  const [contentLoaded, setContentLoaded] = useState(false);
-
-  useEffect(() => {
-    const scrollers = document.querySelectorAll(".scroller");
-    if (
-      scrollers.length > 0 &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      addAnimation();
-      setContentLoaded(true);
-    }
-  }, [contentLoaded]);
-
-  function addAnimation() {
-    const scrollers = document.querySelectorAll(".scroller");
-    scrollers.forEach((scroller) => {
-      scroller.setAttribute("data-animated", "true");
-
-      const scrollerInner = scroller.querySelector(".scroller_inner");
-      const scrollerContent = Array.from(scrollerInner.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        duplicatedItem.setAttribute("aria-hidden", "true");
-        scrollerInner.appendChild(duplicatedItem);
-      });
-    });
-  }
-
-  return (
-    <div
-      className={`scroller ${
-        direction > 0 ? "right-scrollAnimate" : "left-scrollAnimate"
-      }`}
-      data-direction={direction > 0 ? "right" : "left"}
-    >
-      <div className="scroller_inner">
-        {items.map((tech, index) => (
-          <div key={index} className="tech-item">
-            {tech.icon}
-            <span>{tech.name}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 const TechStack = () => {
   const technologies1 = [
@@ -89,10 +39,83 @@ const TechStack = () => {
     { name: "Firebase", icon: <FirebaseIcon /> },
   ];
 
+  const InfiniteScroll = ({ items, direction = 1 }) => {
+    return (
+      <div className=" flex items-end relative w-full h-16 overflow-hidden">
+        <div
+          className={`flex absolute ${
+            direction > 0 ? "animate-scroll-left" : "animate-scroll-right"
+          } hover:pause-animation`}
+        >
+          {[...Array(2)].map((_, setIndex) => (
+            <div key={`set-${setIndex}`} className="flex gap-8 mx-4">
+              {items.map((tech, index) => (
+                <div
+                  key={`${setIndex}-${index}`}
+                  className="flex items-center gap-2 group cursor-pointer min-w-max"
+                >
+                  <div className="w-10 h-10 bg-gray-800 rounded-full overflow-hidden transition-all duration-300 grayscale group-hover:grayscale-0 group-hover:-translate-y-1 techIcon">
+                    {React.cloneElement(tech.icon, {
+                      className: "w-full h-full text-white",
+                    })}
+                  </div>
+                  <span className="text-gray-400 font-semibold group-hover:text-white transition-colors">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <div className="techstack-container">
-      <InfiniteScroll items={technologies1} />
-      <InfiniteScroll items={technologies2} direction={-1} />
+    <div className="w-full max-w-4xl mx-auto bg-black p-8 space-y-8 rounded-lg">
+      <h2 className="text-3xl font-bold text-white">What I work with</h2>
+      <div className="space-y-8">
+        <InfiniteScroll items={technologies1} direction={1} />
+        <InfiniteScroll items={technologies2} direction={-1} />
+      </div>
+      <style jsx global>{`
+        @keyframes scrollLeft {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes scrollRight {
+          from {
+            transform: translateX(-50%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+        .techIcon svg {
+          width: 40px;
+          height: 40px;
+        }
+        .animate-scroll-left {
+          animation: scrollLeft 20s linear infinite;
+        }
+
+        .animate-scroll-right {
+          animation: scrollRight 20s linear infinite;
+        }
+
+        .hover:pause-animation:hover {
+          animation-play-state: paused;
+        }
+
+        .hover:pause-animation:hover * {
+          animation-play-state: paused;
+        }
+      `}</style>
     </div>
   );
 };

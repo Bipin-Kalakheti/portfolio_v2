@@ -7,6 +7,7 @@ import ProjectsGrid from "@/components/projects/ProjectGrid";
 import MapComponent from "@/components/Map";
 import "@/styles/Map.css";
 
+
 export default function HomePage() {
   return (
     <div className="mt-20 max-w-4xl mx-auto">
