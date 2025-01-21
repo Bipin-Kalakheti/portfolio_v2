@@ -17,12 +17,12 @@ const Navbar = () => {
             >
               about
             </Link>
-            <Link
+            {/* <Link
               href="/blog"
               className="text-zinc-400 hover:text-white transition"
             >
               blog
-            </Link>
+            </Link> */}
             <Link
               href="/projects"
               className="text-zinc-400 hover:text-white transition"
@@ -30,12 +30,12 @@ const Navbar = () => {
               projects
             </Link>
 
-            <Link
+            {/* <Link
               href="/visitors"
               className="text-zinc-400 hover:text-white transition"
             >
               visitors
-            </Link>
+            </Link> */}
             <Link
               href="/contact"
               className="text-zinc-400 hover:text-white transition"
@@ -43,9 +43,9 @@ const Navbar = () => {
               contact
             </Link>
 
-            <button className="text-zinc-400 hover:text-white transition">
+            {/* <button className="text-zinc-400 hover:text-white transition">
               🌙
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

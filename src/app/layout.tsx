@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { incognito, gitlabmono } from "../../public/assets/font/font";
+import ParticleBackground from "@/components/ParticleBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,8 @@ export default function RootLayout({
       >
         <Navbar />
         <main className="min-h-90vh bg-black text-white p-6">
-          <div className="max-w-4xl mx-auto">{children}</div>
+          <ParticleBackground />
+          <div className="relative z-10 max-w-4xl mx-auto">{children}</div>
         </main>
         <Footer />
       </body>

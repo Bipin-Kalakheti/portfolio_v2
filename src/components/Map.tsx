@@ -75,7 +75,7 @@ const MapComponent = () => {
       setTimeout(() => {
         map.current?.flyTo({
           zoom: 11, // Target zoom level
-          speed: 2,
+          speed: 2.5,
           curve: 1,
           easing: (t) => t,
           essential: true,

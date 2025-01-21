@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import TechStack from "@/components/TechStack";
 import ProjectsGrid from "@/components/projects/ProjectGrid";
 import MapComponent from "@/components/Map";
-import "@/styles/Map.css";
+import TestComponent from "@/components/TestComponent";
 
+import "@/styles/Map.css";
 
 export default function HomePage() {
   return (
