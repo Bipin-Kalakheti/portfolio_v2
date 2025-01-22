@@ -41,9 +41,9 @@ const TechStack = () => {
 
   const InfiniteScroll = ({ items, direction = 1 }) => {
     return (
-      <div className=" flex items-end relative w-full h-16 overflow-hidden">
+      <div className="scroller-container flex items-end relative w-full h-16 overflow-hidden">
         <div
-          className={`flex absolute ${
+          className={`scroller flex absolute ${
             direction > 0 ? "animate-scroll-left" : "animate-scroll-right"
           } hover:pause-animation`}
         >
@@ -96,10 +96,12 @@ const TechStack = () => {
             transform: translateX(0);
           }
         }
+
         .techIcon svg {
           width: 40px;
           height: 40px;
         }
+
         .animate-scroll-left {
           animation: scrollLeft 20s linear infinite;
         }
@@ -108,12 +110,29 @@ const TechStack = () => {
           animation: scrollRight 20s linear infinite;
         }
 
-        .hover:pause-animation:hover {
+        .hover\\:pause-animation:hover {
           animation-play-state: paused;
         }
 
-        .hover:pause-animation:hover * {
+        .hover\\:pause-animation:hover * {
           animation-play-state: paused;
+        }
+
+        .scroller-container {
+          position: relative;
+          overflow: hidden;
+          mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+          );
+        }
+
+        .scroller {
+          display: flex;
+          gap: 2rem;
         }
       `}</style>
     </div>
