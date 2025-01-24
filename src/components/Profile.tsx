@@ -1,21 +1,23 @@
 import { Mail, Github, Linkedin } from "lucide-react";
 import { incognito } from "../../public/assets/font/font";
+import Image from "next/image";
 
 const ProfileSection = () => {
   return (
     <div className={`flex items-start gap-6 mt-6 ${incognito.variable}`}>
       <div className="w-20 h-20 relative">
         <div className="w-full h-full rounded-full overflow-hidden">
-          <img
+          <Image
             src="/assets/images/profile.png"
             alt="Profile"
-            className="w-full h-full object-cover"
+            layout="fill"
+            objectFit="cover"
           />
         </div>
       </div>
       <div className="flex-1">
         <h1 className="text-2xl font-semibold mb-2">
-          Hey, I'm Bipin Kalakheti{" "}
+          Hey, I&apos;m Bipin Kalakheti{" "}
           <span className="inline-block waving-hand">👋</span>
         </h1>
         <a
@@ -59,14 +61,14 @@ const ProfileSection = () => {
       </div>
       <div className="flex gap-4">
         <a
-          href="mailto:your.email@example.com"
+          href="mailto:bipinkalakheti7@gmail.com"
           className="text-zinc-400 hover:text-white transition"
           aria-label="Email"
         >
           <Mail className="w-6 h-6" />
         </a>
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/Bipin-Kalakheti"
           target="_blank"
           rel="noopener noreferrer"
           className="text-zinc-400 hover:text-white transition"
@@ -75,7 +77,7 @@ const ProfileSection = () => {
           <Github className="w-6 h-6" />
         </a>
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://www.linkedin.com/in/bipin-kalakheti/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-zinc-400 hover:text-white transition"
