@@ -23,10 +23,6 @@ const ParticleBackground = () => {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   const options = useMemo(
     () => ({
       autoPlay: true,
@@ -540,7 +536,7 @@ const ParticleBackground = () => {
     []
   );
 
-  return <Particles init={particlesLoaded} options={options} />;
+  return <Particles options={options} />;
 };
 
 export default ParticleBackground;
