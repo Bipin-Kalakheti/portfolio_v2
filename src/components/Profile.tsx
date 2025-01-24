@@ -5,17 +5,57 @@ import Image from "next/image";
 const ProfileSection = () => {
   return (
     <div className={`flex items-start gap-6 mt-6 ${incognito.variable}`}>
-      <div className="w-20 h-20 relative">
-        <div className="w-full h-full rounded-full overflow-hidden">
-          <Image
-            src="/assets/images/profile.jpeg"
-            alt="Profile"
-            width={80}
-            height={80}
-            objectFit="contain"
-            objectPosition="center"
-            className="rounded-full"
-          />
+      <div className="profile-image-container relative inline-block">
+        <div
+          className="pointer-events-none relative size-[70px] select-none hover:saturate-[70%]"
+          style={{
+            WebkitTouchCallout: "none",
+            WebkitUserSelect: "none",
+            KhtmlUserSelect: "none",
+            MozUserSelect: "none",
+            msUserSelect: "none",
+          }}
+        >
+          <div className="absolute inset-1">
+            <Image
+              className="size-full rounded-full bg-muted-foreground/30 object-cover ring-2 ring-muted-foreground/50 ring-offset-2 ring-offset-background dark:hidden"
+              src="/assets/images/profile.jpeg"
+              alt="Profile"
+              width={80}
+              height={80}
+            />
+            <Image
+              className="hidden size-full rounded-full bg-muted-foreground object-cover ring-2 ring-muted-foreground/50 ring-offset-2 ring-offset-background dark:block"
+              src="/assets/images/profile.jpeg"
+              alt="Profile Dark"
+              width={80}
+              height={80}
+            />
+            <Image
+              className="z-10 absolute top-[2.5px] left-[3px] size-[50px] glasses"
+              src="/assets/images/glasses.png"
+              alt="Glasses"
+              width={50}
+              height={50}
+            />
+          </div>
+          <svg
+            className="absolute inset-0 size-full"
+            viewBox="0 0 100 100"
+            style={{ transform: "rotate(-90deg)" }}
+          >
+            <circle
+              className="circle stroke-emerald-500 dark:stroke-green-500 "
+              cx="50"
+              cy="50"
+              r="46"
+              fill="none"
+              strokeWidth="6"
+              strokeLinecap="round"
+              strokeDasharray="289.03"
+              strokeDashoffset="289.03"
+            />
+          </svg>
         </div>
       </div>
       <div className="flex-1">

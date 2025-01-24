@@ -6,11 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
-interface ParticleBackgroundProps {
-  id: string;
-}
-
-const ParticleBackground = (props: ParticleBackgroundProps) => {
+const ParticleBackground = () => {
   const [init, setInit] = useState(false);
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -544,7 +540,7 @@ const ParticleBackground = (props: ParticleBackgroundProps) => {
     []
   );
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />;
+  return <Particles init={particlesLoaded} options={options} />;
 };
 
 export default ParticleBackground;

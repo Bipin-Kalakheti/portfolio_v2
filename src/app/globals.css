@@ -97,3 +97,34 @@ h4 {
   width: 20px;
   height: 20px;
 }
+
+/* profile section */
+
+.profile-image-container {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.profile-image-container:hover .circle {
+  stroke-dashoffset: 0;
+}
+
+.profile-image-container:hover .glasses {
+  opacity: 1;
+}
+
+.glasses {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateX(-0px);
+  transform: translateY(-10px);
+}
+
+.circle {
+  fill: none;
+  stroke: green;
+  stroke-width: 4;
+  stroke-dasharray: 289.03;
+  stroke-dashoffset: 289.03;
+  transition: stroke-dashoffset 1s ease;
+}

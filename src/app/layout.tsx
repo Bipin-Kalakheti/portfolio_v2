@@ -28,7 +28,7 @@ export default function RootLayout({
         <div className="gradient-overlay absolute top-0  w-full h-48 z-20 pointer-events-none"></div>
 
         <main className="relative min-h-90vh bg-gray text-white p-6">
-          <ParticleBackground />
+          <ParticleBackground  />
           <div className="relative z-10 max-w-4xl mx-auto">{children}</div>
         </main>
         <Footer />
