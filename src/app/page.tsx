@@ -25,7 +25,6 @@ export default function HomePage() {
       </div>
       <TechStack />
       <ProjectsGrid showFeaturedOnly />
-      <TestComponent />
     </div>
   );
 }

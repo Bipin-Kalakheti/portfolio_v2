@@ -43,12 +43,12 @@ const TechStack = () => {
     return (
       <div className="scroller-container flex items-end relative w-full h-16 overflow-hidden">
         <div
-          className={`scroller flex absolute ${
+          className={`scroller flex absolute gap-0 ${
             direction > 0 ? "animate-scroll-left" : "animate-scroll-right"
           } hover:pause-animation`}
         >
           {[...Array(2)].map((_, setIndex) => (
-            <div key={`set-${setIndex}`} className="flex gap-4 mx-4">
+            <div key={`set-${setIndex}`} className="flex gap-4 ">
               {items.map((tech, index) => (
                 <div
                   key={`${setIndex}-${index}`}
@@ -132,7 +132,6 @@ const TechStack = () => {
 
         .scroller {
           display: flex;
-          gap: 2rem;
         }
       `}</style>
     </div>
