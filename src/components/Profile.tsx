@@ -8,10 +8,13 @@ const ProfileSection = () => {
       <div className="w-20 h-20 relative">
         <div className="w-full h-full rounded-full overflow-hidden">
           <Image
-            src="/assets/images/profile.png"
+            src="/assets/images/profile.jpeg"
             alt="Profile"
-            layout="fill"
-            objectFit="cover"
+            width={80}
+            height={80}
+            objectFit="contain"
+            objectPosition="center"
+            className="rounded-full"
           />
         </div>
       </div>
@@ -55,8 +58,8 @@ const ProfileSection = () => {
           </div>
         </a>
         <p className="text-zinc-300 text-lg">
-          I'm a creative software developer with experience in UI design and
-          crafting engaging user experiences with great attention to detail.
+          I&apos;m a creative software developer with experience in UI design
+          and crafting engaging user experiences with great attention to detail.
         </p>
       </div>
       <div className="flex gap-4">
