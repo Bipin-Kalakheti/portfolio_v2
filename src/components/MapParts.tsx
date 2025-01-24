@@ -27,7 +27,7 @@ export const MovingPlane = () => {
         <div className="absolute bottom-[-20px] left-1/2 w-12 h-3 bg-black/20 rounded-full blur-sm transform -translate-x-1/2"></div>
         {/* Plane image */}
         <Image
-          src="/images/plane.webp"
+          src="/assets/images/plane.webp"
           alt="Airplane"
           width={32}
           height={32}
@@ -47,7 +47,7 @@ export const MovingClouds = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="animate-cloud-1 absolute">
           <Image
-            src="/images/cloud.webp"
+            src="/assets/images/cloud.webp"
             alt="Cloud"
             width={600}
             height={600}
@@ -58,7 +58,7 @@ export const MovingClouds = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="animate-cloud-2 absolute" style={{ top: "60%" }}>
           <Image
-            src="/images/cloud.webp"
+            src="/assets/images/cloud.webp"
             alt="Cloud"
             width={100}
             height={100}
