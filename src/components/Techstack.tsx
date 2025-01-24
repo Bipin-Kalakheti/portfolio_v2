@@ -10,7 +10,7 @@ import GitIcon from "../../public/assets/Icons/Github";
 import JavaIcon from "../../public/assets/Icons/Java";
 import ExpressIcon from "../../public/assets/Icons/Express";
 import PythonIcon from "../../public/assets/Icons/Python";
-import MongoDBIcon from "../../public/assets/Icons/MongoDB";
+import MongoDBIcon from "../../public/assets/Icons/Mongodb";
 import NodejsIcon from "../../public/assets/Icons/Node";
 import FirebaseIcon from "../../public/assets/Icons/Firebase";
 import FigmaIcon from "../../public/assets/Icons/Figma";
