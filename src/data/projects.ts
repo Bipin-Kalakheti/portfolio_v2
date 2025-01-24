@@ -6,13 +6,15 @@ export const projects: Project[] = [
     title: "Portfolio Website",
     description:
       "Personal portfolio website built with Next.js and TailwindCSS.",
-    imageUrl: "/images/portfolio.png",
+    imageUrl: "/assets/images/portfolio.png",
     technologies: [
       { name: "React", icon: "⚛" },
       { name: "Next.js", icon: "N" },
       { name: "TypeScript", icon: "TS" },
       { name: "Tailwind", icon: "~" },
     ],
+    github: "https://github.com/Bipin-Kalakheti/Portfolio",
+    link: "https://portfolio-old-mauve-sigma.vercel.app/", 
     featured: true,
   },
   {

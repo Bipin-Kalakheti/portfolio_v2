@@ -7,7 +7,7 @@ const ProfileSection = () => {
       <div className="w-20 h-20 relative">
         <div className="w-full h-full rounded-full overflow-hidden">
           <img
-            src="/assets/images/portfolio.png"
+            src="/assets/images/profile.png"
             alt="Profile"
             className="w-full h-full object-cover"
           />
