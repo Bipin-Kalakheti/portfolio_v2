@@ -31,6 +31,17 @@ h4 {
 
 /* Particle css */
 
+/* src/styles/globals.css */
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .relative {
   position: relative;
 }

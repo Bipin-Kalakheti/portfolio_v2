@@ -1,11 +1,11 @@
 "use client";
 import React, { useCallback } from "react";
 import Particles from "@tsparticles/react";
-import { loadStarsPreset } from "tsparticles-preset-stars";
+import { loadFull } from "tsparticles";
 
 const ParticleBackground = () => {
   const particlesInit = useCallback(async (engine) => {
-    await loadStarsPreset(engine);
+    await loadFull(engine);
   }, []);
 
   return (
@@ -13,15 +13,38 @@ const ParticleBackground = () => {
       id="tsparticles"
       init={particlesInit}
       options={{
-        preset: "stars",
-      }}
-      style={{
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        top: 0,
-        left: 0,
-        zIndex: 0,
+        fullScreen: {
+          enable: true,
+          zIndex: -1,
+        },
+        particles: {
+          number: {
+            value: 100,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "circle",
+          },
+          opacity: {
+            value: 0.5,
+          },
+          size: {
+            value: 3,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+          },
+        },
+        background: {
+          color: "#000000",
+        },
       }}
     />
   );

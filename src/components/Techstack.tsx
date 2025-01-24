@@ -48,7 +48,7 @@ const TechStack = () => {
           } hover:pause-animation`}
         >
           {[...Array(2)].map((_, setIndex) => (
-            <div key={`set-${setIndex}`} className="flex gap-8 mx-4">
+            <div key={`set-${setIndex}`} className="flex gap-4 mx-4">
               {items.map((tech, index) => (
                 <div
                   key={`${setIndex}-${index}`}

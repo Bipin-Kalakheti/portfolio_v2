@@ -26,7 +26,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main className="min-h-90vh bg-black text-white p-6">
-          <ParticleBackground particleCount={2} />
+          <ParticleBackground />
           <div className="relative z-10 max-w-4xl mx-auto">{children}</div>
         </main>
         <Footer />
