@@ -2,10 +2,9 @@
 import React from "react";
 import ProfileSection from "@/components/Profile";
 import { motion } from "framer-motion";
-import TechStack from "@/components/TechStack";
+import TechStack from "@/components/Techstack";
 import ProjectsGrid from "@/components/projects/ProjectGrid";
 import MapComponent from "@/components/Map";
-import TestComponent from "@/components/TestComponent";
 
 import "@/styles/Map.css";
 

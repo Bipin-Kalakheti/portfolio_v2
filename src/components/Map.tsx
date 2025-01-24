@@ -51,6 +51,7 @@ const MapComponent = () => {
       bearing: 0,
       pitch: 0,
       attributionControl: false,
+      interactive: false, // Disable interactions initially
     });
 
     map.current.on("load", () => {
@@ -81,9 +82,16 @@ const MapComponent = () => {
           essential: true,
         });
 
-        // Start animations after zooming is complete
+        // Enable interactions after zooming is complete
         setTimeout(() => {
-          setAnimationsStarted(true);
+          if (map.current) {
+            map.current.dragPan.enable();
+            map.current.scrollZoom.enable();
+            map.current.boxZoom.enable();
+            map.current.doubleClickZoom.enable();
+            map.current.touchZoomRotate.enable();
+            setAnimationsStarted(true);
+          }
         }, 3000); // Adjust this timeout to match the duration of the zoom effect
       }, 500);
     });

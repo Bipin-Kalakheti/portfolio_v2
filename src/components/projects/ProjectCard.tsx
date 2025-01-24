@@ -43,7 +43,9 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                   key={tech.name}
                   className="flex items-center gap-1.5 bg-black/30 px-3 py-1 rounded-full text-sm"
                 >
-                  <span className="text-white">{tech.icon}</span>
+                  <span className="text-white">
+                    {typeof tech.icon === "function" ? tech.icon() : tech.icon}
+                  </span>
                   <span className="text-zinc-400">{tech.name}</span>
                 </div>
               ))}

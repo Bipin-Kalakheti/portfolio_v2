@@ -31,8 +31,6 @@ h4 {
 
 /* profile text css */
 
-
-
 /* Waving hand css */
 @keyframes wave {
   0% {
@@ -93,4 +91,9 @@ h4 {
 
 .gradient-overlay {
   background: linear-gradient(to bottom, rgba(34, 197, 94, 0.15), transparent);
+}
+
+.icon-container svg {
+  width: 20px;
+  height: 20px;
 }
