@@ -7,7 +7,7 @@ import HtmlIcon from "../../public/assets/Icons/Html";
 import RustIcon from "../../public/assets/Icons/Rust";
 import GitIcon from "../../public/assets/Icons/Github";
 import JavaIcon from "../../public/assets/Icons/Java";
-import ExpressIcon from "../../public/assets/Icons/Express";  
+import ExpressIcon from "../../public/assets/Icons/Express";
 import PythonIcon from "../../public/assets/Icons/Python";
 import MongoDBIcon from "../../public/assets/Icons/Mongodb";
 import NodejsIcon from "../../public/assets/Icons/Node";
@@ -19,13 +19,12 @@ import { Project } from "@/types/project";
 export const projects: Project[] = [
   {
     id: "project-2",
-    title: "Portfolio Website",
+    title: "Portfolio V1",
     description:
       "Personal portfolio website built with Next.js and TailwindCSS.",
     imageUrl: "/assets/images/portfolio.png",
     technologies: [
       { name: "React", icon: ReactIcon },
-      { name: "Next.js", icon: NextjsIcon },
       { name: "Tailwind", icon: TailwindIcon },
     ],
     github: "https://github.com/Bipin-Kalakheti/Portfolio",

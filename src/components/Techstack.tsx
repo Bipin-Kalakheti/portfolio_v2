@@ -16,6 +16,15 @@ import FirebaseIcon from "../../public/assets/Icons/Firebase";
 import FigmaIcon from "../../public/assets/Icons/Figma";
 import TailwindIcon from "../../public/assets/Icons/Tailwind";
 
+interface Technology {
+  name: string;
+  icon: React.ReactNode;
+}
+
+interface InfiniteScrollProps {
+  items: Technology[];
+  direction?: number;
+}
 const TechStack = () => {
   const technologies1 = [
     { name: "JavaScript", icon: <JavaScriptIcon /> },
@@ -39,7 +48,10 @@ const TechStack = () => {
     { name: "Firebase", icon: <FirebaseIcon /> },
   ];
 
-  const InfiniteScroll = ({ items, direction = 1 }) => {
+  const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
+    items,
+    direction = 1,
+  }) => {
     return (
       <div className="scroller-container flex items-end relative w-full h-16 overflow-hidden">
         <div
@@ -55,7 +67,8 @@ const TechStack = () => {
                   className="flex items-center gap-2 group cursor-pointer min-w-max"
                 >
                   <div className="w-10 h-10 bg-gray-800 rounded-full overflow-hidden transition-all duration-300 grayscale group-hover:grayscale-0 group-hover:-translate-y-1 techIcon">
-                    {React.cloneElement(tech.icon, {
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                    {React.cloneElement(tech.icon as React.ReactElement<any>, {
                       className: "w-full h-full text-white",
                     })}
                   </div>

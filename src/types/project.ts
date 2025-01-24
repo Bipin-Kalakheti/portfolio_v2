@@ -1,6 +1,7 @@
+import { ReactNode } from "react";
 export interface Technology {
   name: string;
-  icon: string;
+  icon: string | (() => ReactNode);
 }
 
 export interface Project {

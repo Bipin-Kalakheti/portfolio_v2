@@ -1,6 +1,8 @@
 "use client";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
+import { InteractivityDetect, DivType } from "@tsparticles/engine";
+
 // import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
@@ -38,6 +40,7 @@ const ParticleBackground = () => {
       },
       backgroundMask: {
         composite: "destination-out",
+
         cover: {
           opacity: 1,
           color: {
@@ -57,7 +60,7 @@ const ParticleBackground = () => {
       duration: 0,
       fpsLimit: 120,
       interactivity: {
-        detectsOn: "window",
+        detectsOn: InteractivityDetect.window,
         events: {
           onClick: {
             enable: true,
@@ -67,7 +70,7 @@ const ParticleBackground = () => {
             selectors: [],
             enable: false,
             mode: "bubble",
-            type: "circle",
+            type: DivType.circle,
           },
           onHover: {
             enable: false,
