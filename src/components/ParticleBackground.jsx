@@ -2,13 +2,14 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
 import { InteractivityDetect, DivType } from "@tsparticles/engine";
-
+import { useTheme } from "@/context/ThemeContext"; // Update this import
 // import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 const ParticleBackground = () => {
+  const { theme } = useTheme();
   const [init, setInit] = useState(false);
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -30,7 +31,7 @@ const ParticleBackground = () => {
       autoPlay: true,
       background: {
         color: {
-          value: "#000000",
+          value: "transparent",
         },
         image: "",
         position: "",
@@ -62,29 +63,20 @@ const ParticleBackground = () => {
       interactivity: {
         detectsOn: InteractivityDetect.window,
         events: {
+          onHover: {
+            enable: true,
+            mode: "repulse",
+            parallax: {
+              enable: true,
+              force: 60,
+              smooth: 10,
+            },
+          },
           onClick: {
             enable: true,
             mode: "push",
           },
-          onDiv: {
-            selectors: [],
-            enable: false,
-            mode: "bubble",
-            type: DivType.circle,
-          },
-          onHover: {
-            enable: false,
-            mode: "attract",
-            parallax: {
-              enable: true,
-              force: 14,
-              smooth: 14,
-            },
-          },
-          resize: {
-            delay: 0.5,
-            enable: true,
-          },
+          resize: true,
         },
         modes: {
           trail: {
@@ -130,29 +122,14 @@ const ParticleBackground = () => {
             },
           },
           push: {
-            default: true,
-            groups: [],
-            quantity: 10,
+            quantity: 4,
           },
           remove: {
             quantity: 2,
           },
           repulse: {
-            distance: 200,
+            distance: 150,
             duration: 0.4,
-            factor: 100,
-            speed: 1,
-            maxSpeed: 50,
-            easing: "ease-out-quad",
-            divs: {
-              distance: 200,
-              duration: 0.4,
-              factor: 100,
-              speed: 1,
-              maxSpeed: 50,
-              easing: "ease-out-quad",
-              selectors: [],
-            },
           },
           slow: {
             factor: 3,
@@ -215,7 +192,7 @@ const ParticleBackground = () => {
           },
         },
         color: {
-          value: "#ffffff",
+          value: theme === "dark" ? "#43ff64d9" : "#ce5a2c",
           animation: {
             h: {
               count: 0,
@@ -261,10 +238,8 @@ const ParticleBackground = () => {
           attract: {
             distance: 200,
             enable: false,
-            rotate: {
-              x: 3000,
-              y: 3000,
-            },
+            rotateX: 600,
+            rotateY: 1200,
           },
           center: {
             x: 50,
@@ -276,7 +251,7 @@ const ParticleBackground = () => {
           distance: {},
           direction: "none",
           drift: 0,
-          enable: false,
+          enable: true,
           gravity: {
             acceleration: 9.81,
             enable: false,
@@ -292,14 +267,12 @@ const ParticleBackground = () => {
             options: {},
           },
           outModes: {
-            default: "out",
-            bottom: "out",
-            left: "out",
-            right: "out",
-            top: "out",
+            default: "bounce",
           },
           random: false,
-          size: false,
+          size: {
+            value: { min: 1, max: 3 },
+          },
           speed: 2,
           spin: {
             acceleration: 0,
@@ -315,22 +288,19 @@ const ParticleBackground = () => {
           warp: false,
         },
         number: {
+          value: 80,
           density: {
             enable: true,
-            width: 1920,
-            height: 1080,
+            area: 800,
           },
           limit: {
             mode: "delete",
             value: 0,
           },
-          value: 50,
         },
         opacity: {
-          value: {
-            min: 0.1,
-            max: 1,
-          },
+          value:
+            theme === "dark" ? { min: 0.1, max: 0.5 } : { min: 0.4, max: 0.8 },
           animation: {
             count: 0,
             enable: true,
@@ -362,7 +332,7 @@ const ParticleBackground = () => {
           type: "circle",
         },
         size: {
-          value: 2,
+          value: { min: 1, max: 3 },
           animation: {
             count: 0,
             enable: false,
@@ -430,14 +400,17 @@ const ParticleBackground = () => {
           lines: {
             enable: true,
             frequency: 0.05,
-            opacity: 1,
+            opacity: theme === "dark" ? 1 : 0.8,
+            color: {
+              value: "#43ff64d9",
+            },
           },
           particles: {
             enable: true,
             frequency: 0.05,
-            opacity: 0.91,
+            opacity: theme === "dark" ? 0.91 : 0.95,
             color: {
-              value: "#ffffff",
+              value: "#43ff64d9",
             },
           },
         },
@@ -489,14 +462,12 @@ const ParticleBackground = () => {
         },
         links: {
           blink: false,
-          color: {
-            value: "#fff",
-          },
+          color: theme === "dark" ? "#ffffff" : "#000000",
           consent: false,
           distance: 100,
           enable: false,
           frequency: 1,
-          opacity: 1,
+          opacity: 0.2,
           shadow: {
             blur: 5,
             color: {
@@ -536,10 +507,30 @@ const ParticleBackground = () => {
         },
       },
     }),
-    []
+    [theme]
   );
 
-  return <Particles options={options} />;
+  return init ? (
+    <div
+      style={{
+        backgroundColor: theme === "dark" ? "#000000" : "#ffffff",
+        transition: "background-color 0.3s ease",
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        top: 0,
+        left: 0,
+        opacity: theme === "dark" ? 0.5 : 1,
+        pointerEvents: "none",
+      }}
+    >
+      <Particles
+        id="tsparticles"
+        options={options}
+        style={{ position: "absolute" }}
+      />
+    </div>
+  ) : null;
 };
 
 export default ParticleBackground;

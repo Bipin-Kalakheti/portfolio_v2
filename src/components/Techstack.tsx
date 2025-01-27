@@ -85,8 +85,10 @@ const TechStack = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-black p-8 space-y-8 rounded-lg">
-      <h2 className="text-3xl font-bold text-white">What I work with</h2>
+    <div className="w-full max-w-4xl mx-auto dark:bg-black bg-zinc-100/80 p-8 space-y-8 rounded-lg">
+      <h2 className="text-3xl font-bold dark:text-white text-zinc-900">
+        What I work with
+      </h2>
       <div className="space-y-8">
         <InfiniteScroll items={technologies1} direction={1} />
         <InfiniteScroll items={technologies2} direction={-1} />

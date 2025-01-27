@@ -48,11 +48,12 @@
   height: 40px;
   filter: grayscale(100%);
   transition: all 0.2s ease-out;
+  color: var(--accent-color);
 }
 
 .tech-item:hover svg {
   filter: grayscale(0%);
-  transform: translateY(-8px)
+  transform: translateY(-8px);
 }
 
 @keyframes scroll {

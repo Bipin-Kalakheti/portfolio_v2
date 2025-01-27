@@ -1,7 +1,6 @@
 .icon-container {
   position: relative;
   display: flex;
-  cursor: pointer;
   transition: all 0.2s;
   font-size: 17px;
 }
@@ -42,5 +41,3 @@
   visibility: visible;
   pointer-events: auto;
 }
-
-

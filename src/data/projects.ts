@@ -14,6 +14,7 @@ import NodejsIcon from "../../public/assets/Icons/Node";
 import FirebaseIcon from "../../public/assets/Icons/Firebase";
 import FigmaIcon from "../../public/assets/Icons/Figma";
 import TailwindIcon from "../../public/assets/Icons/Tailwind";
+import SassIcon from "../../public/assets/Icons/Sass";
 import { Project } from "@/types/project";
 
 export const projects: Project[] = [
@@ -25,7 +26,8 @@ export const projects: Project[] = [
     imageUrl: "/assets/images/portfolio.png",
     technologies: [
       { name: "React", icon: ReactIcon },
-      { name: "Tailwind", icon: TailwindIcon },
+      { name: "JavaScript", icon: JavaScriptIcon },
+      {name: "Sass" , icon: SassIcon}
     ],
     github: "https://github.com/Bipin-Kalakheti/Portfolio",
     link: "https://portfolio-old-mauve-sigma.vercel.app/",
