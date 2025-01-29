@@ -113,3 +113,33 @@
     }
   }
 }
+
+.techIcon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.techIcon svg {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.techIcon:hover svg {
+  transform: translateY(-8px) rotateX(10deg) rotateY(10deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),
+    /* Main shadow */ 0 20px 40px rgba(0, 0, 0, 0.1); /* Soft outer shadow */
+}
+
+.techIcon:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 5%;
+  width: 90%;
+  height: 20%;
+  background: rgba(0, 0, 0, 0.3);
+  filter: blur(10px);
+  transform: rotateX(85deg);
+  z-index: -1;
+  opacity: 0.6;
+}
+

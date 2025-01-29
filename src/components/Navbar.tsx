@@ -8,14 +8,16 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/70 dark:bg-zinc-900/70 border-b border-zinc-200 dark:border-zinc-800">
+    <nav className="absolute top-0 left-0 right-0 z-10  bg-white/70 dark:bg-black ">
       <div className="max-w-4xl mx-auto px-6 py-4">
-        <div className="flex justify-between items-center font-incognito">
+        <div className="flex justify-between items-center ">
           <Link
             href="/"
-            className="text-xl font-bold cursor-pointer dark:text-white text-zinc-900 hover:text-[var(--accent-color)] transition-colors duration-300"
+            className="text-xl font-semibold cursor-pointer dark:text-white text-zinc-900 hover:text-[var(--accent-color)] dark:hover:text-[var(--accent-color)] transition-colors duration-300"
           >
-            Bipin Kalakheti
+            <h1 className="text-xl font-semibold cursor-pointer dark:text-white text-zinc-900 hover:text-[var(--accent-color)] dark:hover:text-[var(--accent-color)] transition-colors duration-300">
+              Bipin Kalakheti
+            </h1>
           </Link>
           <div className="flex items-center gap-1 sm:gap-2">
             {[

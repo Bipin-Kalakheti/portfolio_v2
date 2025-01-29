@@ -15,6 +15,7 @@ import NodejsIcon from "../../public/assets/Icons/Node";
 import FirebaseIcon from "../../public/assets/Icons/Firebase";
 import FigmaIcon from "../../public/assets/Icons/Figma";
 import TailwindIcon from "../../public/assets/Icons/Tailwind";
+import { useTheme } from "@/context/ThemeContext"; // Assuming you have a ThemeContext
 
 interface Technology {
   name: string;
@@ -26,11 +27,16 @@ interface InfiniteScrollProps {
   direction?: number;
 }
 const TechStack = () => {
+  const { theme } = useTheme(); // Get the current theme
+
   const technologies1 = [
     { name: "JavaScript", icon: <JavaScriptIcon /> },
     { name: "TypeScript", icon: <TypeScriptIcon /> },
     { name: "React", icon: <ReactIcon /> },
-    { name: "Next.js", icon: <NextjsIcon /> },
+    {
+      name: "Next.js",
+      icon: <NextjsIcon />,
+    },
     { name: "Vite", icon: <ViteIcon /> },
     { name: "HTML", icon: <HtmlIcon /> },
     { name: "Figma", icon: <FigmaIcon /> },
@@ -39,7 +45,10 @@ const TechStack = () => {
 
   const technologies2 = [
     { name: "Rust", icon: <RustIcon /> },
-    { name: "Git", icon: <GitIcon /> },
+    {
+      name: "Git",
+      icon: <GitIcon className={theme === "dark" ? "" : ""} />,
+    },
     { name: "Java", icon: <JavaIcon /> },
     { name: "Express", icon: <ExpressIcon /> },
     { name: "Python", icon: <PythonIcon /> },
@@ -55,7 +64,7 @@ const TechStack = () => {
     return (
       <div className="scroller-container flex items-end relative w-full h-16 overflow-hidden">
         <div
-          className={`scroller flex absolute gap-0 ${
+          className={`scroller flex absolute gap-2 ${
             direction > 0 ? "animate-scroll-left" : "animate-scroll-right"
           } hover:pause-animation`}
         >
@@ -66,13 +75,13 @@ const TechStack = () => {
                   key={`${setIndex}-${index}`}
                   className="flex items-center gap-2 group cursor-pointer min-w-max"
                 >
-                  <div className="w-10 h-10 bg-gray-800 rounded-full overflow-hidden transition-all duration-300 grayscale group-hover:grayscale-0 group-hover:-translate-y-1 techIcon">
+                  <div className="w-10 h-10 overflow-hidden transition-all duration-300  dark:grayscale group-hover:grayscale-0  techIcon group-hover:translate-y-[-8px] group-hover:rotate-x-10 group-hover:rotate-y-10 group-hover:shadow-lg">
                     {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {React.cloneElement(tech.icon as React.ReactElement<any>, {
-                      className: "w-full h-full text-white",
+                      className: "",
                     })}
                   </div>
-                  <span className="text-gray-400 font-semibold group-hover:text-white transition-colors">
+                  <span className="text-gray-400 font-semibold group-hover:text-black dark:group-hover:text-white  transition-colors">
                     {tech.name}
                   </span>
                 </div>
@@ -85,7 +94,7 @@ const TechStack = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto dark:bg-black bg-zinc-100/80 p-8 space-y-8 rounded-lg">
+    <div className="w-full max-w-4xl mx-auto dark:bg-black  p-8 space-y-8 rounded-lg">
       <h2 className="text-3xl font-bold dark:text-white text-zinc-900">
         What I work with
       </h2>

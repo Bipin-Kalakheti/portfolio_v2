@@ -22,6 +22,9 @@ module.exports = {
           text: "#f3f4f6",
         },
       },
+      boxShadow: {
+        "3d": "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(0, 0, 0, 0.1)",
+      },
     },
   },
   plugins: [],

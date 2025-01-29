@@ -97,7 +97,7 @@ const ProfileSection = () => {
             </p>
           </div>
         </a>
-        <p className="text-zinc-300 text-lg">
+        <p className="dark:text-zinc-300 text-lg">
           I&apos;m a creative software developer with experience in UI design
           and crafting engaging user experiences with great attention to detail.
         </p>
@@ -105,7 +105,7 @@ const ProfileSection = () => {
       <div className="flex gap-4">
         <a
           href="mailto:bipinkalakheti7@gmail.com"
-          className="text-zinc-400 hover:text-white transition"
+          className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
           aria-label="Email"
         >
           <Mail className="w-6 h-6" />
@@ -114,7 +114,7 @@ const ProfileSection = () => {
           href="https://github.com/Bipin-Kalakheti"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-zinc-400 hover:text-white transition"
+          className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
           aria-label="GitHub"
         >
           <Github className="w-6 h-6" />
@@ -123,7 +123,7 @@ const ProfileSection = () => {
           href="https://www.linkedin.com/in/bipin-kalakheti/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-zinc-400 hover:text-white transition"
+          className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
           aria-label="LinkedIn"
         >
           <Linkedin className="w-6 h-6" />

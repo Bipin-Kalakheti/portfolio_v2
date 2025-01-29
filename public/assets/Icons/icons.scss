@@ -1,9 +1,20 @@
 .icon-container {
   position: relative;
-  display: flex;
+  display: inline-block; /* Ensure the icon is treated as an inline block */
   transition: all 0.2s;
   font-size: 17px;
+
+  .nextjs-icon {
+    svg {
+      fill: var(--nextjs-color);
+    }
+  }
 }
+
+.invert-nextjs {
+  filter: invert(100%);
+}
+
 
 .tooltip {
   background-color: var(--main-color);
