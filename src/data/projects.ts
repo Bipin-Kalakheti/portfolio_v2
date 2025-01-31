@@ -22,7 +22,7 @@ export const projects: Project[] = [
     id: "brain-archive",
     title: "Brain Archive",
     description: "A sophisticated document management system with AI-powered vector search, real-time collaboration, and smart document organization using OpenAI embeddings.",
-    imageUrl: "/assets/images/brain-archive.png",
+    imageUrl: "/assets/images/Brain-Archive.png",
     technologies: [
       { name: "Next.js", icon: NextjsIcon },
       { name: "TypeScript", icon: TypeScriptIcon },
