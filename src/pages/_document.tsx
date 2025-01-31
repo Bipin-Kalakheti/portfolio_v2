@@ -20,12 +20,11 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `
                 (function() {
-                  const savedTheme = localStorage.getItem('theme') || 'dark';
-                  if (savedTheme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
+                  try {
+                    const savedTheme = localStorage.getItem('theme') || 'dark';
+                    document.documentElement.classList.add('theme-loading');
+                    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+                  } catch (e) {}
                 })();
               `,
             }}

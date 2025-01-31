@@ -7,9 +7,16 @@ const ThemeContext = createContext<ReturnType<typeof useThemeHook> | undefined>(
 );
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const theme = useThemeHook();
+  const themeContext = useThemeHook();
+
+  if (!themeContext.mounted) {
+    return null;
+  }
+
   return (
-    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={themeContext}>
+      {children}
+    </ThemeContext.Provider>
   );
 }
 

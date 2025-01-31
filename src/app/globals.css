@@ -21,6 +21,24 @@
   }
 }
 
+:root,
+:root.dark {
+  --transition-duration: 0.3s;
+}
+
+:root.theme-ready * {
+  transition: background-color var(--transition-duration) ease,
+    color var(--transition-duration) ease,
+    border-color var(--transition-duration) ease,
+    opacity var(--transition-duration) ease !important;
+}
+
+/* Ensure immediate theme application */
+:root.theme-loading,
+:root.theme-loading * {
+  transition: none !important;
+}
+
 :root {
   --foreground-rgb: 24, 24, 27;
   --background-start-rgb: 255, 255, 255;
