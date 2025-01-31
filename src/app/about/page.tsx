@@ -23,9 +23,11 @@ const AboutPage = () => {
           <div className="relative hover-lift">
             <h1 className="text-4xl font-bold mb-4 text-gradient">About Me</h1>
             <p className="text-lg dark:text-zinc-300 text-zinc-700">
-              Early tech enthusiast turned software developer, with a passion
-              for creating impactful web applications and solving complex
-              problems.
+              A software engineering graduate with a lifelong fascination for
+              technology, demonstrated through building full-stack web
+              applications and exploring emerging technologies. Through personal
+              projects and continuous learning, I&apos;m developing practical
+              solutions that solve real-world problems.
             </p>
           </div>
         </div>
@@ -35,25 +37,25 @@ const AboutPage = () => {
           {[
             {
               Icon: Code2,
-              title: "Early Tech Journey",
+              title: "Technical Foundation",
               description:
-                "Started coding at a young age, driven by curiosity and passion for technology.",
+                "Built a strong foundation in computer science through hands-on experience with systems, working with various programming languages and modern frameworks in my projects.",
               color: "purple",
               delay: 0.2,
             },
             {
               Icon: BookOpen,
-              title: "Education & Growth",
+              title: "Education Path",
               description:
-                "Continuously learning and adapting to new technologies in the ever-evolving tech landscape.",
+                "Recently graduated with a Software Engineering diploma, and actively learning through building projects and exploring new technologies.",
               color: "blue",
               delay: 0.3,
             },
             {
               Icon: Brain,
-              title: "Technical Expertise",
+              title: "Project Experience",
               description:
-                "Specialized in full-stack development with React, Node.js, and modern web technologies.",
+                "Built several full-stack applications using React, Next.js, and Node.js, including a real-time chat app and a food ordering platform. Each project has been a stepping stone in my development journey.",
               color: "green",
               delay: 0.4,
             },
@@ -61,7 +63,7 @@ const AboutPage = () => {
               Icon: Rocket,
               title: "Current Focus",
               description:
-                "Building production-ready applications while exploring emerging technologies.",
+                "Working on personal projects while exploring modern development practices, from TypeScript and testing to cloud services and real-time features.",
               color: "yellow",
               delay: 0.5,
             },
@@ -94,10 +96,13 @@ const AboutPage = () => {
             My Philosophy
           </h2>
           <p className="dark:text-zinc-300 text-zinc-600 leading-relaxed">
-            I believe in continuous learning and staying current with technology
-            trends. My approach combines technical excellence with creative
-            problem-solving, always focusing on delivering value through clean,
-            efficient code and intuitive user experiences.
+            I believe in learning by doing and growing through challenges. My
+            journey in technology has taught me that every project, whether
+            successful or not, is a learning opportunity. I&apos;m committed to
+            writing clean code, creating user-friendly applications, and
+            constantly expanding my knowledge. While I&apos;m at the beginning
+            of my professional journey, I bring fresh perspectives and a strong
+            drive to contribute meaningfully to the tech community.
           </p>
         </motion.div>
       </motion.div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const ProfileSection = () => {
   return (
+    <>
     <div className={`flex items-start gap-6 mt-6 ${incognito.variable}`}>
       <div className="profile-image-container relative inline-block">
         <div
@@ -59,8 +60,10 @@ const ProfileSection = () => {
         </div>
       </div>
       <div className="flex-1">
-        <h1 className="text-2xl font-semibold mb-2">
-          Hey, I&apos;m Bipin Kalakheti{" "}
+        <h1 className="lg:text-3xl md:text-2xl sm:text-xl text-xl font-semibold cursor-pointer transition-colors duration-300">
+          <span className="hover-text-gradient">
+            Hey, I&apos;m Bipin Kalakheti
+          </span>
           <span className="inline-block waving-hand">👋</span>
         </h1>
         <a
@@ -97,12 +100,9 @@ const ProfileSection = () => {
             </p>
           </div>
         </a>
-        <p className="dark:text-zinc-300 text-lg">
-          I&apos;m a creative software developer with experience in UI design
-          and crafting engaging user experiences with great attention to detail.
-        </p>
+        
       </div>
-      <div className="flex gap-4">
+      <div className="hidden gap-4  sm:flex">
         <a
           href="mailto:bipinkalakheti7@gmail.com"
           className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
@@ -129,7 +129,15 @@ const ProfileSection = () => {
           <Linkedin className="w-6 h-6" />
         </a>
       </div>
+      
     </div>
+    <div className="flex flex-col gap-2 ">
+    <p className="dark:text-zinc-300 text-lg">
+      I&apos;m a creative software developer with experience in UI design
+      and crafting engaging user experiences with great attention to detail.
+    </p>
+  </div>
+  </>
   );
 };
 

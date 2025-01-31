@@ -24,11 +24,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} 
-        dark:bg-black bg-white dark:text-white text-zinc-900 transition-colors duration-300`}
+        dark:bg-black bg-white dark:text-white text-zinc-900 transition-colors duration-300 `}
       >
         <ThemeProvider>
           <Navbar />
-          <div className="gradient-overlay absolute top-0 w-full h-60 z-20 pointer-events-none"></div>
+          <div className="gradient-overlay aura absolute top-0 w-full h-60 z-20 pointer-events-none"></div>
 
           <main className="relative min-h-90vh p-6 dark:bg-black bg-white dark:text-white text-zinc-900 transition-colors duration-300">
             <ParticleBackground />
