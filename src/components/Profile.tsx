@@ -151,8 +151,7 @@ const ProfileSection = () => {
       </div>
       <div className="flex flex-col gap-2 ">
         <p className="dark:text-zinc-300 text-lg">
-          I&apos;m a creative software developer with experience in UI design
-          and crafting engaging user experiences with great attention to detail.
+        I&apos;m a software engineering graduate specializing in modern web development, with a strong focus on building responsive and intuitive applications using React, Next.js, and Node.js. Through my projects, I combine technical skills with creative problem-solving to create engaging user experiences.
         </p>
       </div>
     </>

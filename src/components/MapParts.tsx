@@ -31,7 +31,7 @@ export const MovingPlane = () => {
           alt="Airplane"
           width={32}
           height={32}
-          className="rotate-[-75deg]"
+          className="rotate-[-55deg] sm:rotate-[-65deg]"
         />
       </div>
     </div>
@@ -60,9 +60,9 @@ export const MovingClouds = () => {
           <Image
             src="/assets/images/cloud.webp"
             alt="Cloud"
-            width={100}
-            height={100}
-            className="opacity-50"
+            width={500}
+            height={500}
+            className="opacity-60 rotate-[-280deg]"
           />
         </div>
       </div>
