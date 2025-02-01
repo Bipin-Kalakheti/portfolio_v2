@@ -14,7 +14,12 @@ const NameComp = ({ text }: NameCompProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass("text-animate-hover");
-    }, nameArray.length * 100 + 1000); // Wait for all letters to finish bouncing in
+      const textZone = document.querySelector(".text-zone");
+      if (textZone) {
+        (textZone as HTMLElement).startTime = performance.now();
+      }
+    }, nameArray.length * 100 + 1000);
+
 
     return () => clearTimeout(timer);
   }, [nameArray.length]);

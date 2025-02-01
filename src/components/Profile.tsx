@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AnimatedLetters from "./AnimatedLetters";
 import NameComp from "./namecomp";
 
+
 const ProfileSection = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
   const nameArray = ["i", "p", "i", "n"];

@@ -38,7 +38,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 {project.title}
               </h3>
             </div>
-            <p className="text-zinc-200 dark:text-zinc-300 mb-4 line-clamp-3 group-hover:line-clamp-none">
+            <p className="text-zinc-200 dark:text-zinc-300 mb-4 line-clamp-4 group-hover:line-clamp-none">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
