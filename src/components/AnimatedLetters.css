@@ -6,7 +6,6 @@
   min-width: 5px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  color: var(--accent-color);
 }
 
 .text-animate-hover {
@@ -16,7 +15,6 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   /* text-shadow: 4px 4px var(--shadow-color); */
-  color: var(--accent-color);
   animation: rubberBand 1s;
 }
 

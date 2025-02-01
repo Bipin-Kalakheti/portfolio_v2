@@ -107,6 +107,12 @@ const MapComponent = () => {
       setAnimationsStarted(true);
     }, 3500);
 
+    // Add inside the first useEffect, after the map initialization (around line 65):
+    map.current.on("dragstart", () => setIsInteracting(true));
+    map.current.on("dragend", () => setIsInteracting(false));
+    map.current.on("zoomstart", () => setIsInteracting(true));
+    map.current.on("zoomend", () => setIsInteracting(false));
+
     return () => {
       marker.current?.remove();
       map.current?.remove();
