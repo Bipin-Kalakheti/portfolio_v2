@@ -80,7 +80,7 @@ const ProfileSection = () => {
           </div>
         </div>
         <div className="flex-1">
-          <h1 className="lg:text-4xl md:text-3xl sm:text-xl text-xl font-semibold cursor-pointer transition-colors duration-300">
+          <h1 className="lg:text-3xl md:text-2xl sm:text-xl text-xl font-semibold cursor-pointer transition-colors duration-300">
             <span>
                 <NameComp text="Hey, I'm" /><br/> <NameComp text="Bipin Kalakheti" />
             </span>
