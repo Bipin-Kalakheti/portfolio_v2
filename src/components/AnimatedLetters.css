@@ -5,7 +5,7 @@
   animation-fill-mode: forwards;
   min-width: 5px;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: var(--shadow-color);
 }
 
 .text-animate-hover {
@@ -13,7 +13,7 @@
   opacity: 1 !important;
   display: inline-block;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: var(--shadow-color);
   /* text-shadow: 4px 4px var(--shadow-color); */
   animation: rubberBand 1s;
 }

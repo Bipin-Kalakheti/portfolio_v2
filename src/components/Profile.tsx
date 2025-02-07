@@ -4,11 +4,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import AnimatedLetters from "./AnimatedLetters";
 import NameComp from "./namecomp";
-
+import { motion } from "framer-motion";
 
 const ProfileSection = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
   const nameArray = ["i", "p", "i", "n"];
+
 
   // useEffect(() => {
   //   // Reduced timeout from 4000 to 3000 for faster initial animation
@@ -82,7 +83,8 @@ const ProfileSection = () => {
         <div className="flex-1">
           <h1 className="lg:text-3xl md:text-2xl sm:text-xl text-xl font-semibold cursor-pointer transition-colors duration-300">
             <span>
-                <NameComp text="Hey, I'm" /><br/> <NameComp text="Bipin Kalakheti" />
+              <NameComp text="Hey, I'm" />
+              <br /> <NameComp text="Bipin Kalakheti" />
             </span>
             <span className="inline-block waving-hand">👋</span>
           </h1>
@@ -121,37 +123,79 @@ const ProfileSection = () => {
             </div>
           </a>
         </div>
-        <div className="hidden gap-4  sm:flex">
-          <a
-            href="mailto:bipinkalakheti7@gmail.com"
-            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
-            aria-label="Email"
-          >
-            <Mail className="w-6 h-6" />
-          </a>
-          <a
-            href="https://github.com/Bipin-Kalakheti"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
-            aria-label="GitHub"
-          >
-            <Github className="w-6 h-6" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/bipin-kalakheti/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-6 h-6" />
-          </a>
+        <div className="hidden gap-4  sm:flex sm:flex-col">
+          <div className="flex gap-4">
+            <a
+              href="mailto:bipinkalakheti7@gmail.com"
+              className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
+              aria-label="Email"
+            >
+              <Mail className="w-6 h-6" />
+            </a>
+            <a
+              href="https://github.com/Bipin-Kalakheti"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
+              aria-label="GitHub"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/bipin-kalakheti/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+          <div className="flex gap-4">
+            <a
+              href="/assets/CV/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-500 dark:text-zinc-300 hover:text-zinc-800 dark:hover:text-white transition flex items-center gap-2"
+              aria-label="Resume"
+            >
+              <motion.div
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all duration-300"
+                whileHover={{ y: -2,
+                  scale: 1.05,
+                 }}
+                whileTap={{ scale: 0.90 }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <line x1="10" y1="9" x2="8" y2="9" />
+                </svg>
+                Resume
+              </motion.div>
+            </a>
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-2 ">
         <p className="dark:text-zinc-300 text-lg">
-        I&apos;m a software engineering graduate specializing in modern web development, with a strong focus on building responsive and intuitive applications using React, Next.js, and Node.js. Through my projects, I combine technical skills with creative problem-solving to create engaging user experiences.
+          I&apos;m a software engineering graduate specializing in modern web
+          development, with a strong focus on building responsive and intuitive
+          applications using React, Next.js, and Node.js. Through my projects, I
+          combine technical skills with creative problem-solving to create
+          engaging user experiences.
         </p>
       </div>
     </>
