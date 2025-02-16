@@ -26,7 +26,7 @@
 
 @keyframes cloudMovement1 {
   0% {
-    transform: translate(800px, -200px);
+    transform: translate(900px, -200px);
   }
 
   100% {
@@ -49,11 +49,11 @@
 }
 
 .animate-cloud-1 {
-  animation: cloudMovement1 100s linear infinite;
+  animation: cloudMovement1 80s linear infinite;
 }
 
 .animate-cloud-2 {
-  animation: cloudMovement2 80s linear infinite;
+  animation: cloudMovement2 60s linear infinite;
 }
 
 .interacting .animate-plane-movement,
@@ -61,4 +61,26 @@
 .interacting .animate-cloud-2 {
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  @keyframes cloudMovement1 {
+    0% {
+      transform: translate(400px, -100px);
+    }
+
+    100% {
+      transform: translate(-275px, -50px);
+    }
+  }
+
+  @keyframes cloudMovement2 {
+    0% {
+      transform: translate(400px, -100px);
+    }
+
+    100% {
+      transform: translate(-225px, -50px);
+    }
+  }
 }
