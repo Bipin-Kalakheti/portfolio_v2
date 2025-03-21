@@ -160,7 +160,7 @@ const ProfileSection = () => {
               aria-label="Resume"
             >
               <motion.div
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all duration-300"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all duration-300  hover:text-amber-600 dark:hover:text-emerald-300"
                 whileHover={{ y: -2,
                   scale: 1.05,
                  }}

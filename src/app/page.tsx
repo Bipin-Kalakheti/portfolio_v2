@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import TechStack from "@/components/Techstack";
 import ProjectsGrid from "@/components/projects/ProjectGrid";
 import MapComponent from "@/components/Map";
+import ExperienceSection from "@/components/Experience";
 
 import "@/styles/Map.css";
 
@@ -23,6 +24,7 @@ export default function HomePage() {
         <ProfileSection />
       </div>
       <TechStack />
+      <ExperienceSection />
       <ProjectsGrid showFeaturedOnly />
     </div>
   );

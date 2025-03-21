@@ -47,28 +47,28 @@ const ProjectsGrid = ({ showFeaturedOnly = false }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <motion.a
-            href="/projects"
-            className="flex items-center gap-2 text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-all duration-300"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
+          <div className="mt-10 text-center">
+        <a
+          href="/projects"
+          className="inline-flex items-center gap-1 text-sm font-medium text-amber-600 dark:text-emerald-400 hover:text-amber-500 dark:hover:text-emerald-300 transition-colors hover:translate-x-1"
+        >
+          View all projects
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            View all projects
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
+            <path
               strokeLinecap="round"
               strokeLinejoin="round"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </motion.a>
+              strokeWidth={2}
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
+          </svg>
+        </a>
+      </div>
         </motion.div>
       )}
     </section>
